@@ -1,0 +1,20 @@
+Exercise 3 — Tasks
+1Find all the Toy Story movies 
+SELECT *
+FROM Movies
+WHERE Title LIKE '%Toy Story%';
+
+2.Find all the movies directed by John Lasseter
+SELECT *
+FROM Movies
+WHERE Director LIKE '%John Lasseter%';
+
+3.Find all the movies (and director) not directed by John Lasseter
+SELECT *
+FROM Movies
+WHERE Director NOT LIKE '%John Lasseter%';
+
+4.Find all the WALL-* movies
+SELECT Title
+FROM Movies
+WHERE Title LIKE '%WALL-%';
