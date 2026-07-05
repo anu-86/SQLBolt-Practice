@@ -35,3 +35,17 @@ WHERE department_id NOT IN
     SELECT department_id
     FROM departments
 );
+
+Task 4
+
+Write an SQL query to:
+
+Find all employees whose salary is greater than the average salary. Return only the name and salary columns.
+
+SELECT name, salary
+FROM employees
+WHERE salary >
+(
+    SELECT AVG(salary)
+    FROM employees
+);
