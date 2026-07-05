@@ -1,0 +1,37 @@
+Excersise Tasks
+
+Question 1
+
+Given the employees table:Find all employees whose salary is greater than the average salary of all employees.
+
+SELECT *
+FROM employees
+WHERE salary >
+(
+    SELECT AVG(salary)
+    FROM employees
+);
+
+Question 2
+
+Given these tables:Find all employees who belong to departments listed in the departments table.
+
+SELECT *
+FROM employees
+WHERE department_id IN
+(
+    SELECT department_id
+    FROM departments
+);
+
+Question 3
+
+Using the same tables above,Find all employees who do not belong to any department listed in the departments table.
+
+SELECT *
+FROM employees
+WHERE department_id NOT IN
+(
+    SELECT department_id
+    FROM departments
+);
