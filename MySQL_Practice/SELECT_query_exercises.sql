@@ -49,3 +49,60 @@ WHERE department_id IN (1,2,3);
 SELECT name
 FROM employees
 WHERE name LIKE "A%";
+
+-- 11. Find employees whose email ends with 'company.com'.
+SELECT name,email
+FROM employees
+WHERE email LIKE '%company.com';
+
+-- 12. List all employees ordered by salary from highest to lowest.
+SELECT name,salary
+FROM employees
+ORDER BY salary DESC;
+
+-- 13. Find the top 3 highest-paid employees.
+SELECT name,salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 3;
+
+-- 14. List employees ordered by years of experience from lowest to highest.
+SELECT name,years_experience
+FROM employees
+ORDER BY years_experience ASC;
+
+-- 15. Find the distinct cities where employees live.
+SELECT DISTINCT city
+FROM employees;
+
+-- 16. Find the distinct employee roles.
+SELECT DISTINCT role
+FROM employees;
+
+-- 17. Find each employee's name and department name.
+SELECT name,department_name
+FROM employees
+INNER JOIN departments
+ON employees.department_id=departments.department_id;
+
+-- 18. Find the employee name, department name, and location for all employees.
+SELECT name,department_name,location
+FROM employees
+INNER JOIN departments
+ON employees.department_id=departments.department_id;
+
+-- 19. List all departments and the names of their employees, including departments that have no employees.
+SELECT department_name,name
+FROM departments
+LEFT JOIN employees
+ON departments.department_id=employees.department_id;
+
+-- 20. List all departments and their locations, including departments that have no employees.
+SELECT department_name,location,name
+FROM departments
+LEFT JOIN employees
+ON departments.department_id=employees.department_id;
+
+
+
+
