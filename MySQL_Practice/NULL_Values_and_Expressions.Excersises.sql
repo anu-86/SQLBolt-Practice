@@ -24,3 +24,28 @@ WHERE department_id IS NOT NULL ;
 SELECT COUNT(*)
 FROM employees
 WHERE email IS NULL;
+
+-- 6. Display each employee's name, current salary, and annual salary.
+SELECT name,salary,employee_id,
+salary*12 AS Annual_salary
+FROM employees;
+
+-- 7. Display each employee's name and salary after adding a bonus of 5000.
+SELECT name,salary,employee_id,
+salary+5000 AS Bonus_salary
+FROM employees;
+
+-- 8. Calculate the new salary of each employee after a 10% salary increase.
+SELECT name,salary,
+salary+(salary*10)/100 AS Increased_salary
+FROM employees;
+
+-- 9. Find employees whose employee IDs are even numbers.
+SELECT employee_id
+FROM employees
+WHERE employee_id % 2=0;
+
+-- 10. Calculate the average salary of all employees.
+SELECT AVG(salary)
+FROM employees;
+
