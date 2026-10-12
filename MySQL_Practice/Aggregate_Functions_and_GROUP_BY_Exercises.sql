@@ -84,5 +84,35 @@ WHERE salary>25000
 GROUP BY Role
 HAVING COUNT(Name)>2;
 
+-- 17. Calculate the average salary of employees in each department.
+--     Display only departments whose average salary is greater than 25000.
+SELECT Role,AVG(salary)
+FROM Employees
+GROUP BY Role
+HAVING AVG(salary)>25000;
+
+-- 18. Find departments where the total salary of employees earning
+--     more than 20000 is greater than 50000.
+SELECT Role,SUM(salary)
+FROM Employees
+WHERE salary>20000
+GROUP BY role
+HAVING SUM(salary)>50000;
+
+-- 19. Count the employees in each department whose salary is greater than 30000.
+--     Display only departments that have at least 3 such employees.
+SELECT Role,COUNT(Name)
+FROM Employees
+WHERE salary>30000
+GROUP BY Role
+HAVING COUNT(name)>=3;
+
+-- 20. Find departments whose average salary is greater than 30000
+--     and whose employee count is greater than 2.
+SELECT Role,AVG(salary) AS Average_salary
+FROM Employees
+GROUP BY Role
+HAVING AVG(salary)>30000 AND COUNT(Name)>2;
+
 
 
