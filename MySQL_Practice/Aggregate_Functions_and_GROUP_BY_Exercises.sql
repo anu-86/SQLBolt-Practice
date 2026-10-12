@@ -46,5 +46,43 @@ SELECT Role,SUM(salary) AS Total_salary
 FROM employees
 GROUP BY Role;
 
+-- 11. Find departments that have more than 3 employees.
+SELECT Role,COUNT(Role) AS Employee_count
+FROM employees
+GROUP BY Role
+HAVING COUNT(Role)>3;
+
+-- 12. Display departments whose average salary is greater than 30000.
+SELECT Role, AVG(salary) AS Average_salary
+FROM employees
+GROUP BY Role
+HAVING AVG(salary)>30000;
+
+-- 13. Find departments whose total salary is greater than 100000.
+SELECT Role,SUM(salary) AS Total_salary
+FROM Employees
+GROUP BY Role
+HAVING SUM(salary)>100000;
+
+-- 14. Display departments where the highest salary is greater than 40000.
+SELECT Role,MAX(salary)
+FROM Employees
+GROUP BY Role
+HAVING MAX(salary)>40000;
+
+-- 15. Find departments that have at least 5 employees.
+SELECT Role,COUNT(Name)
+FROM Employees
+GROUP BY Role
+HAVING COUNT(Name)>=5;
+
+-- 16. Count the employees in each department whose salary is greater than 25000.
+ -- Display only departments that have more than 2 such employees.
+SELECT Role,COUNT(Name) AS Employee_Count
+FROM Employees
+WHERE salary>25000
+GROUP BY Role
+HAVING COUNT(Name)>2;
+
 
 
